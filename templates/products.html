@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href='{% static "css/styles.css"%}'/>
+    <title>Главная</title>
+</head>
+
+<body>
+    <h1>Все товары</h1>
+    <hr>
+    {% if products %} <!-- Если есть товары, то выводим таблицу с ними -->
+        <table border="1">
+            <tr>
+                <td>
+                    Название
+                </td>
+                <td>
+                    Цена
+                </td>
+                <td>
+                    Картинка
+                </td>
+                <td>
+                    Путь
+                </td>
+                <td>
+                    Описание
+                </td>
+            </tr>
+        {% for product in products %}
+            <tr>
+                <td>
+                    {{ product.name }}
+                </td>
+                <td>
+                    {{ product.price }}
+                </td>
+                <td>
+                    <img src='{% get_static_prefix %}{{product.img_path}}' width="100px"/>
+                </td>
+                <td>
+                    {{product.img_path}}
+                </td>
+                <td>
+                    {{ product.about }}
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% else %}
+        <h2>Товаров нет!</h2>
+    {% endif %}
+</body>
+
+</html>

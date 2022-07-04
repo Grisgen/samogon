@@ -1,0 +1,19 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: bisque;
+}
+
+h1{
+    color: navy;
+}
+
+h2{
+    color:darkgreen;
+}
+
+h3 { color:black;}
+
+
+.class1{
+    color:red;
+}
